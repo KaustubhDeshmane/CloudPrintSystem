@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-Cloud-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Azure SQL](https://img.shields.io/badge/Azure-SQL-0078D4?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 # ☁️ Cloud Print Queue System
 
 A cloud-enabled print queue management system built with **FastAPI**, **Azure SQL Database**, and **SQLAlchemy**. The application allows users to upload documents, manage print jobs, and maintain a centralized print queue through a scalable cloud-based architecture.
