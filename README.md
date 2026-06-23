@@ -1,104 +1,203 @@
 # ☁️ Cloud Print Queue System
 
-A FastAPI backend that stores print jobs in **Azure SQL**, secured via environment variables.
+A cloud-enabled print queue management system built with **FastAPI**, **Azure SQL Database**, and **SQLAlchemy**. The application allows users to upload documents, manage print jobs, and maintain a centralized print queue through a scalable cloud-based architecture.
 
 ---
 
-## 📋 For Member 2 (DevOps) — What I Need From You
+## 🚀 Features
 
-Once you have provisioned the Azure SQL resource, please share **all four** of the following values with me privately (never over chat/Slack in plaintext — use a secrets manager, encrypted DM, or 1Password):
+### 📄 Print Job Management
 
-| Variable | Where to Find It | Example |
-|---|---|---|
-| `AZURE_SQL_SERVER` | Azure Portal → SQL Server → Overview → **Server name** | `myserver.database.windows.net` |
-| `AZURE_SQL_DATABASE` | Azure Portal → SQL Database → **Database name** | `cloud_print_db` |
-| `AZURE_SQL_USER` | The SQL admin login you set during provisioning | `sqladmin` |
-| `AZURE_SQL_PASSWORD` | The SQL admin password you set during provisioning | *(keep secure)* |
+* Upload documents for printing
+* Create and manage print jobs
+* Track print queue status
+* View job history
 
-> ⚠️ **Important for DevOps**: Make sure the Azure SQL Server firewall rules allow connections from the developer IPs (or set "Allow Azure services" for cloud deployments). The app connects over port **1433** using **ODBC Driver 18**.
+### ☁️ Cloud Integration
+
+* Azure SQL Database integration
+* Cloud-hosted backend services
+* Centralized data management
+* Scalable deployment architecture
+
+### 🔐 Secure Configuration
+
+* Environment variable based configuration
+* Secure database connectivity
+* Isolated application settings
+
+### ⚡ REST API
+
+* FastAPI-powered backend
+* Lightweight and high-performance API
+* Easy integration with frontend applications
+* Interactive API documentation
 
 ---
 
-## 🚀 Team Setup Guide
+## 🛠️ Technology Stack
 
-### 1. Prerequisites
+| Technology          | Purpose                   |
+| ------------------- | ------------------------- |
+| Python              | Backend Development       |
+| FastAPI             | REST API Framework        |
+| SQLAlchemy          | ORM & Database Operations |
+| Azure SQL Database  | Cloud Database            |
+| Uvicorn             | ASGI Server               |
+| HTML/CSS/JavaScript | Frontend Interface        |
+| Azure               | Cloud Platform            |
 
-- Python 3.10+
-- [ODBC Driver 18 for SQL Server](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server) installed on your machine
+---
 
-  **Windows**: Download and run the MSI from the link above.  
-  **macOS**: `brew install msodbcsql18`  
-  **Ubuntu/Debian**:
-  ```bash
-  curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-  curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
-  sudo apt-get update && sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
-  ```
+## 📂 Project Structure
 
-### 2. Install Python Dependencies
+```text
+CloudPrintSystem
+│
+├── app/
+├── static/
+├── templates/
+├── migrations/
+├── .github/
+├── requirements.txt
+├── .env.example
+├── README.md
+└── main.py
+```
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+* Python 3.10+
+* Azure SQL Database
+* Git
+
+### Clone Repository
+
+```bash
+git clone https://github.com/KaustubhDeshmane/CloudPrintSystem.git
+cd CloudPrintSystem
+```
+
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+#### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+#### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-New dependencies added in this migration:
+### Configure Environment Variables
 
-| Package | Purpose |
-|---|---|
-| `pyodbc` | Low-level ODBC bridge between Python and Azure SQL |
-| `python-dotenv` | Loads variables from `.env` into `os.getenv()` at runtime |
+Create a `.env` file using `.env.example` as a reference.
 
-### 3. Configure Your Local `.env` File
-
-```bash
-# Copy the template
-cp .env.example .env
+```env
+DB_SERVER=your_server
+DB_NAME=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 ```
 
-Then open `.env` and fill in the real values provided by Member 2 (DevOps):
-
-```dotenv
-AZURE_SQL_SERVER=your-server-name.database.windows.net
-AZURE_SQL_DATABASE=your-database-name
-AZURE_SQL_USER=your-sql-username
-AZURE_SQL_PASSWORD=your-sql-password
-```
-
-> 🔒 **Never commit `.env`** — it is already listed in `.gitignore`. Only commit `.env.example`.
-
-### 4. Run the Application
+### Run Application
 
 ```bash
 uvicorn main:app --reload
 ```
 
-On the **first run**, SQLAlchemy will automatically create the `print_jobs` table in Azure SQL if it doesn't exist yet. You'll see this in the console:
+Application will be available at:
 
-```
-[Startup] Connecting to Azure SQL and initialising schema...
-[Startup] Schema ready.
-```
-
----
-
-## 🗂️ Project Structure
-
-```
-cloud-print-system/
-├── main.py          # FastAPI app + routes (uses lifespan for DB init)
-├── database.py      # Azure SQL connection via SQLAlchemy + pyodbc
-├── models.py        # ORM table definitions
-├── schemas.py       # Pydantic request/response schemas
-├── requirements.txt # Python dependencies
-├── .env.example     # ✅ Commit this  — credential template
-├── .env             # ❌ Never commit — real credentials
-└── .gitignore
+```text
+http://127.0.0.1:8000
 ```
 
 ---
 
-## 🔗 Key Design Decisions
+## 📖 API Documentation
 
-- **`database.py`** fails fast at startup if any env variable is missing, so misconfiguration is caught immediately rather than at the first DB call.
-- **`models.py`** uses explicit `String(N)` lengths on all text columns — required by Azure SQL (T-SQL does not accept unbounded `VARCHAR`).
-- **`main.py`** uses FastAPI's `lifespan` context manager (the modern replacement for the deprecated `@app.on_event("startup")`) to run `create_all()` safely after the engine is configured.
+FastAPI automatically generates interactive documentation.
+
+### Swagger UI
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+### ReDoc
+
+```text
+http://127.0.0.1:8000/redoc
+```
+
+---
+
+## ☁️ Azure Deployment
+
+This project is designed to be deployed on Azure services and integrates with:
+
+* Azure SQL Database
+* Azure App Service
+* Azure Storage (optional)
+* Azure Resource Groups
+
+---
+
+## 🎯 Learning Outcomes
+
+This project demonstrates:
+
+* Cloud Application Development
+* Database Design & Integration
+* REST API Development
+* Environment Configuration Management
+* Azure Cloud Services
+* ORM using SQLAlchemy
+* Full-Stack Application Architecture
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Kaustubh Deshmane**
+
+---
+
+### ⭐ If you found this project useful, consider giving it a star!
+
+*Code. Create. Innovate.*
