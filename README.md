@@ -21,7 +21,7 @@ A cloud-enabled **Print Queue Management System** built with **FastAPI**, **Azur
 
 # 🚀 Overview
 
-Cloud Print Queue System is a cloud-native web application that centralizes document printing by allowing users to securely upload documents, manage print jobs, and monitor queue status through a high-performance REST API.
+Cloud Print Queue System is a cloud-native web application that centralizes document printing by allowing users to securely upload documents, manage print jobs,make payments and monitor queue status through a high-performance REST API.
 
 Built using **FastAPI** and **SQLAlchemy**, the system integrates with **Azure SQL Database** to provide reliable cloud-based data management while maintaining a modular and scalable backend architecture.
 
