@@ -24,6 +24,22 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
 
 ---
 
+# 📸 ScreenShots
+
+### User Interface
+
+![Home Screen](assets/screenshots/Home.png)
+
+### User Document Upload
+
+![Home Screen](assets/screenshots/Home.png)
+
+### Admin Interface
+
+![Home Screen](assets/screenshots/Home.png)
+
+---
+
 # ✨ Features
 
 ### 👤 User
