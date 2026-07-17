@@ -2,117 +2,117 @@
 
 # ☁️ Cloud Print Queue System
 
-### Secure • Scalable • Cloud-Native Print Management
+### Cloud-Native Print Management Platform
 
-A cloud-enabled **Print Queue Management System** built with **FastAPI**, **Azure SQL Database**, and **SQLAlchemy**, designed to streamline print job management through a secure, scalable, and centralized architecture.
+A secure and scalable **cloud-based print queue management system** that enables users to upload documents, configure print settings, make secure online payments via **PhonePe**, and track print jobs in real time. Administrators can efficiently manage print queues, documents, payments, and job statuses through a centralized dashboard.
 
----
-
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Azure](https://img.shields.io/badge/Microsoft-Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![Azure SQL](https://img.shields.io/badge/Azure-SQL-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge)
-![MIT License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge\&logo=fastapi\&logoColor=white)
+![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=for-the-badge\&logo=microsoftazure\&logoColor=white)
+![Azure SQL](https://img.shields.io/badge/Azure%20SQL-CC2927?style=for-the-badge\&logo=microsoftsqlserver\&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge)
+![PhonePe](https://img.shields.io/badge/PhonePe-Payment-5F259F?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 </div>
 
 ---
 
-# 🚀 Overview
+# 📖 Overview
 
-Cloud Print Queue System is a cloud-native web application that centralizes document printing by allowing users to securely upload documents, manage print jobs,make payments and monitor queue status through a high-performance REST API.
-
-Built using **FastAPI** and **SQLAlchemy**, the system integrates with **Azure SQL Database** to provide reliable cloud-based data management while maintaining a modular and scalable backend architecture.
+Cloud Print Queue System modernizes the traditional printing workflow by combining **FastAPI**, **Microsoft Azure**, and **PhonePe Payment Gateway** into a unified cloud platform. Users can upload documents, customize print settings, pay securely online, and monitor their print requests, while administrators manage the complete printing lifecycle from a centralized dashboard.
 
 ---
 
-# ✨ Key Features
+# ✨ Features
 
-### 📄 Print Queue Management
+### 👤 User
 
-- Upload documents for printing
-- Create and manage print jobs
-- Monitor print queue status
-- View print history
-- Centralized job processing
+* 📄 Upload PDF/documents
+* 🖨️ Configure print settings
+* 📑 Paper size, orientation & duplex options
+* 🎨 Color / Black & White printing
+* 🔢 Multiple copies & page selection
+* 💰 Automatic cost estimation
+* 💳 Secure PhonePe payments
+* 📊 Queue tracking
+* 🧾 Download payment receipts
+* 📜 Print history
 
-### ☁️ Cloud Infrastructure
+### 👨‍💼 Admin
 
-- Azure SQL Database integration
-- Cloud-hosted backend services
-- Secure database connectivity
-- Scalable cloud architecture
+* Dashboard overview
+* Queue management
+* Print job monitoring
+* Payment verification
+* Customer management
+* Search & filters
+* Analytics & reporting
 
-### ⚡ RESTful API
+### ☁️ Cloud
 
-- High-performance FastAPI backend
-- Interactive Swagger documentation
-- ReDoc API documentation
-- Clean API architecture
-
-### 🔒 Security
-
-- Environment-based configuration
-- Secure credential management
-- Database connection isolation
-- Production-ready configuration
-
----
-
-# 🛠 Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| Python | Backend Development |
-| FastAPI | REST API Framework |
-| SQLAlchemy | ORM |
-| Azure SQL Database | Cloud Database |
-| Uvicorn | ASGI Server |
-| HTML • CSS • JavaScript | Frontend |
-| Azure App Service | Cloud Deployment |
+* Azure App Service
+* Azure SQL Database
+* Azure Blob Storage
+* Secure environment variables
+* Scalable cloud deployment
 
 ---
 
-# 🏗 Architecture
+# 🏗️ Architecture
 
 ```text
-                Client
-                   │
-                   ▼
-          FastAPI REST API
-                   │
-        ┌──────────┴──────────┐
-        │                     │
-        ▼                     ▼
- Document Upload        Print Queue
-        │                     │
-        └──────────┬──────────┘
-                   ▼
-             SQLAlchemy ORM
-                   │
-                   ▼
-         Azure SQL Database
+                    User Portal
+                         │
+                         ▼
+            Upload & Configure Print Job
+                         │
+                         ▼
+                 FastAPI REST Backend
+        ┌────────────┬─────────────┬────────────┐
+        ▼            ▼             ▼
+ Azure Blob      PhonePe       SQLAlchemy
+   Storage       Payment            ORM
+        │            │              │
+        └────────────┼──────────────┘
+                     ▼
+            Azure SQL Database
+                     │
+                     ▼
+          Queue Management Engine
+                     │
+                     ▼
+              Admin Dashboard
 ```
+
+---
+
+# 🛠️ Tech Stack
+
+| Category | Technologies                          |
+| -------- | ------------------------------------- |
+| Backend  | Python, FastAPI, SQLAlchemy, Uvicorn  |
+| Frontend | HTML, CSS, JavaScript                 |
+| Database | Azure SQL Database                    |
+| Cloud    | Azure App Service, Azure Blob Storage |
+| Payment  | PhonePe Payment Gateway               |
 
 ---
 
 # 📂 Project Structure
 
 ```text
-CloudPrintSystem/
+CloudPrintQueueSystem/
 │
 ├── app/
 │   ├── routes/
 │   ├── models/
-│   ├── database/
 │   ├── services/
+│   ├── database/
 │   └── utils/
 │
 ├── static/
 ├── templates/
-├── migrations/
-├── .github/
 ├── requirements.txt
 ├── .env.example
 ├── main.py
@@ -123,11 +123,11 @@ CloudPrintSystem/
 
 # ⚙️ Installation
 
-### Clone Repository
+### Clone the Repository
 
 ```bash
-git clone https://github.com/KaustubhDeshmane/CloudPrintSystem.git
-cd CloudPrintSystem
+git clone https://github.com/KaustubhDeshmane/CloudPrintQueueSystem.git
+cd CloudPrintQueueSystem
 ```
 
 ### Create Virtual Environment
@@ -142,7 +142,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-**Linux / macOS**
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
@@ -156,96 +156,80 @@ pip install -r requirements.txt
 
 ### Configure Environment Variables
 
-Create a `.env` file using `.env.example`.
-
 ```env
 DB_SERVER=
 DB_NAME=
 DB_USERNAME=
 DB_PASSWORD=
+
+AZURE_STORAGE_CONNECTION_STRING=
+AZURE_STORAGE_CONTAINER=
+
+PHONEPE_MERCHANT_ID=
+PHONEPE_SALT_KEY=
 ```
 
-### Run the Application
+### Run the Server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Server runs on:
-
-```text
-http://127.0.0.1:8000
-```
-
 ---
 
-# 📖 API Documentation
+# 📚 API Documentation
 
-FastAPI automatically generates interactive documentation.
-
-### Swagger UI
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-### ReDoc
-
-```text
-http://127.0.0.1:8000/redoc
-```
+| Documentation | URL                           |
+| ------------- | ----------------------------- |
+| Swagger UI    | `http://localhost:8000/docs`  |
+| ReDoc         | `http://localhost:8000/redoc` |
 
 ---
 
 # ☁️ Azure Services
 
-The application is designed to integrate seamlessly with Microsoft Azure.
-
-- Azure SQL Database
-- Azure App Service
-- Azure Storage (Optional)
-- Azure Resource Groups
+* Azure App Service
+* Azure SQL Database
+* Azure Blob Storage
+* Azure Resource Group
 
 ---
 
-# 🎯 Project Highlights
+# 🔒 Security
 
-- Cloud-native backend architecture
-- Secure database connectivity
-- Modular FastAPI project structure
-- ORM-powered database operations
-- RESTful API design
-- Environment-based configuration
-- Azure cloud integration
-- Scalable deployment workflow
-
----
-
-# 📚 Learning Outcomes
-
-This project demonstrates practical experience with:
-
-- Cloud Computing using Microsoft Azure
-- Backend API Development
-- SQLAlchemy ORM
-- Database Design
-- FastAPI Framework
-- Azure SQL Integration
-- Environment Configuration
-- Production Deployment
+* Environment-based configuration
+* Secure Azure SQL connections
+* Azure Blob Storage
+* Input validation with FastAPI
+* SQLAlchemy ORM protection
+* PhonePe payment verification
+* Production-ready configuration
 
 ---
 
-# 🚀 Future Improvements
+# 🚀 Highlights
 
-- User Authentication & Authorization
-- File Storage using Azure Blob Storage
-- Print Job Prioritization
-- Real-time Queue Updates
-- Email Notifications
-- Dashboard Analytics
-- Docker Containerization
-- CI/CD Pipeline Integration
+* Cloud-native architecture
+* Modular FastAPI backend
+* RESTful API design
+* Azure cloud integration
+* Secure online payments
+* Scalable storage
+* Interactive Swagger documentation
+* Responsive user interface
+
+---
+
+# 🎯 Future Improvements
+
+* JWT Authentication
+* Docker support
+* CI/CD pipeline
+* Email notifications
+* Real-time queue updates
+* Multi-printer support
+* Azure Key Vault integration
+* Admin analytics dashboard
 
 ---
 
@@ -253,30 +237,20 @@ This project demonstrates practical experience with:
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a new feature branch
-
 ```bash
+# Fork the repository
 git checkout -b feature/your-feature
-```
 
-3. Commit your changes
+git commit -m "Add new feature"
 
-```bash
-git commit -m "Add your feature"
-```
-
-4. Push your branch
-
-```bash
 git push origin feature/your-feature
 ```
 
-5. Open a Pull Request
+Then open a Pull Request.
 
 ---
 
-# 📜 License
+# 📄 License
 
 This project is licensed under the **MIT License**.
 
@@ -292,15 +266,15 @@ Passionate about building scalable cloud applications, backend systems, and mode
 
 # 📬 Contact
 
-Feel free to reach out for collaboration, feedback, or project discussions.
+For feedback, suggestions, or collaboration:
 
-**GitHub:** @KaustubhDeshmane
+* **GitHub:** **@KaustubhDeshmane**
 
 ---
 
 <div align="center">
 
-### ⭐ If you found this project useful, consider giving it a star!
+### ⭐ If you found this project helpful, consider giving it a star!
 
 **Built with ❤️ by Kaustubh Deshmane**
 
