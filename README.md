@@ -85,13 +85,13 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
 # 🏗️ Architecture
 
 ```text
-                    User Portal
-                         │
-                         ▼
-            Upload & Configure Print Job
-                         │
-                         ▼
-                 FastAPI REST Backend
+              User Portal
+                    │
+                    ▼
+       Upload & Configure Print Job
+                    │
+                    ▼
+            FastAPI REST Backend
         ┌────────────┬─────────────┬
         ▼            ▼             ▼
  Azure Blob      PhonePe       SQLAlchemy
@@ -127,18 +127,22 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
 ```text
 CloudPrintQueueSystem/
 │
-├── app/
-│   ├── routes/
-│   ├── models/
-│   ├── services/
-│   ├── database/
-│   └── utils/
-│
+├── assets/
+│   └── Screenshots/
+|       ├── User.png
+│       ├── Upload.png
+│       └── Admin.png
+|
 ├── static/
-├── templates/
 ├── requirements.txt
 ├── .env.example
 ├── main.py
+├── check_setup.py
+├── clear_jobs.py
+├── database.py
+├── models.py 
+├── schemas.py
+├── update_theme.py
 └── README.md
 ```
 
