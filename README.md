@@ -1,8 +1,8 @@
 <div align="center">
 
-# ☁️ Cloud Print Queue System
+# ☁️ Cloud Print System
 
-### Cloud-Native Print Management Platform
+### Cloud-Native Print Queue Management Platform
 
 A secure and scalable **cloud-based print queue management system** that enables users to upload documents, configure print settings, make secure online payments via **PhonePe**, and track print jobs in real time. Administrators can efficiently manage print queues, documents, payments, and job statuses through a centralized dashboard.
 
@@ -18,7 +18,7 @@ A secure and scalable **cloud-based print queue management system** that enables
 
 ---
 
-# 📖 Overview
+# 🚀 Overview
 
 Cloud Print Queue System modernizes the traditional printing workflow by combining **FastAPI**, **Microsoft Azure**, and **PhonePe Payment Gateway** into a unified cloud platform. Users can upload documents, customize print settings, pay securely online, and monitor their print requests, while administrators manage the complete printing lifecycle from a centralized dashboard.
 
@@ -49,6 +49,13 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
 * Search & filters
 * Analytics & reporting
 
+### ⚡ RESTful API
+
+- High-performance FastAPI backend
+- Interactive Swagger documentation
+- ReDoc API documentation
+- Clean API architecture
+
 ### ☁️ Cloud
 
 * Azure App Service
@@ -69,7 +76,7 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
                          │
                          ▼
                  FastAPI REST Backend
-        ┌────────────┬─────────────┬────────────┐
+        ┌────────────┬─────────────┬
         ▼            ▼             ▼
  Azure Blob      PhonePe       SQLAlchemy
    Storage       Payment            ORM
@@ -126,8 +133,8 @@ CloudPrintQueueSystem/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/KaustubhDeshmane/CloudPrintQueueSystem.git
-cd CloudPrintQueueSystem
+git clone https://github.com/KaustubhDeshmane/CloudPrintSystem.git
+cd CloudPrintSystem
 ```
 
 ### Create Virtual Environment
@@ -237,20 +244,30 @@ uvicorn main:app --reload
 
 Contributions are welcome!
 
+1. Fork the repository
+2. Create a new feature branch
+
 ```bash
-# Fork the repository
 git checkout -b feature/your-feature
+```
 
-git commit -m "Add new feature"
+3. Commit your changes
 
+```bash
+git commit -m "Add your feature"
+```
+
+4. Push your branch
+
+```bash
 git push origin feature/your-feature
 ```
 
-Then open a Pull Request.
+5. Open a Pull Request
 
 ---
 
-# 📄 License
+# 📜 License
 
 This project is licensed under the **MIT License**.
 
@@ -266,7 +283,7 @@ Passionate about building scalable cloud applications, backend systems, and mode
 
 # 📬 Contact
 
-For feedback, suggestions, or collaboration:
+Feel free to reach out for collaboration, feedback, or project discussions.
 
 * **GitHub:** **@KaustubhDeshmane**
 
