@@ -32,7 +32,7 @@ Cloud Print Queue System modernizes the traditional printing workflow by combini
 
 ### User Document Upload
 
-![Home Screen](assets/Screenshots/UserUpload.png)
+![Home Screen](assets/Screenshots/Upload.png)
 
 ### Admin Interface
 
